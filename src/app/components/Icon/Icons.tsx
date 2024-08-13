@@ -2,10 +2,12 @@ import { IconProps } from "./types";
 
 import CheckIcon from "./icons/CheckIcon";
 import CloseIcon from "./icons/CloseIcon";
+import ClockIcon from "./icons/ClockIcon";
 
 const iconMap = {
   check: CheckIcon,
   close: CloseIcon,
+  clock: ClockIcon,
 };
 
 function DispatchIcon({
