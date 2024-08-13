@@ -17,6 +17,7 @@ import {
   NotificationOffIcon,
   NotificationOnIcon,
 } from "./icons/NotificationIcons";
+import RefreshIcon from "./icons/RefreshIcon";
 
 const iconMap = {
   check: CheckIcon,
@@ -39,6 +40,7 @@ const iconMap = {
   "light-on": LightOnIcon,
   "notification-off": NotificationOffIcon,
   "notification-on": NotificationOnIcon,
+  refresh: RefreshIcon,
 };
 
 function DispatchIcon({
