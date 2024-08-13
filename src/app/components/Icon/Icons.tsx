@@ -10,6 +10,7 @@ import EditIcon from "./icons/EditIcon";
 import { EyeOffIcon, EyeOnIcon } from "./icons/EyeIcons";
 import InfoIcon from "./icons/InfoIcon";
 import KebabIcon from "./icons/KebabIcon";
+import LightningIcon from "./icons/LightningIcon";
 
 const iconMap = {
   check: CheckIcon,
@@ -25,6 +26,7 @@ const iconMap = {
   "eye-on": EyeOnIcon,
   info: InfoIcon,
   kebab: KebabIcon,
+  lightning: LightningIcon,
 };
 
 function DispatchIcon({
