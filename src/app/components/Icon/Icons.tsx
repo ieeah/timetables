@@ -20,6 +20,7 @@ import {
 import RefreshIcon from "./icons/RefreshIcon";
 import SettingsIcon from "./icons/SettingsIcon";
 import TogglesIcon from "./icons/TogglesIcon";
+import { UserOffIcon, UserOnIcon } from "./icons/UserIcons";
 
 const iconMap = {
   check: CheckIcon,
@@ -45,6 +46,8 @@ const iconMap = {
   refresh: RefreshIcon,
   settings: SettingsIcon,
   toggles: TogglesIcon,
+  "user-off": UserOffIcon,
+  "user-on": UserOnIcon,
 };
 
 function DispatchIcon({
