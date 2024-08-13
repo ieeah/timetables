@@ -1,9 +1,11 @@
 import { IconProps } from "./types";
 
 import CheckIcon from "./icons/CheckIcon";
+import CloseIcon from "./icons/CloseIcon";
 
 const iconMap = {
   check: CheckIcon,
+  close: CloseIcon,
 };
 
 function DispatchIcon({
