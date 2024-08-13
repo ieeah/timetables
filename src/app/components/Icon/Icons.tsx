@@ -21,6 +21,7 @@ import RefreshIcon from "./icons/RefreshIcon";
 import SettingsIcon from "./icons/SettingsIcon";
 import TogglesIcon from "./icons/TogglesIcon";
 import { UserOffIcon, UserOnIcon } from "./icons/UserIcons";
+import ChevronIcon from "./icons/ChevronIcon";
 
 const iconMap = {
   check: CheckIcon,
@@ -48,6 +49,10 @@ const iconMap = {
   toggles: TogglesIcon,
   "user-off": UserOffIcon,
   "user-on": UserOnIcon,
+  "chevron-left": ChevronIcon,
+  "chevron-right": ChevronIcon,
+  "chevron-top": ChevronIcon,
+  "chevron-bottom": ChevronIcon,
 };
 
 function DispatchIcon({
