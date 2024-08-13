@@ -9,6 +9,7 @@ import DeleteIcon from "./icons/DeleteIcon";
 import EditIcon from "./icons/EditIcon";
 import { EyeOffIcon, EyeOnIcon } from "./icons/EyeIcons";
 import InfoIcon from "./icons/InfoIcon";
+import KebabIcon from "./icons/KebabIcon";
 
 const iconMap = {
   check: CheckIcon,
@@ -23,6 +24,7 @@ const iconMap = {
   "eye-off": EyeOffIcon,
   "eye-on": EyeOnIcon,
   info: InfoIcon,
+  kebab: KebabIcon,
 };
 
 function DispatchIcon({
