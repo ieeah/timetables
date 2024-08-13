@@ -5,6 +5,7 @@ import CloseIcon from "./icons/CloseIcon";
 import ClockIcon from "./icons/ClockIcon";
 import { CloudOnIcon, CloudOffIcon } from "./icons/CloudIcons";
 import { DarkOffIcon, DarkOnIcon } from "./icons/DarkIcons";
+import DeleteIcon from "./icons/DeleteIcon";
 
 const iconMap = {
   check: CheckIcon,
@@ -14,6 +15,7 @@ const iconMap = {
   "cloud-on": CloudOnIcon,
   "dark-off": DarkOffIcon,
   "dark-on": DarkOnIcon,
+  delete: DeleteIcon,
 };
 
 function DispatchIcon({
