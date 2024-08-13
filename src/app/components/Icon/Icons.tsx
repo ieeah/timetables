@@ -13,6 +13,10 @@ import KebabIcon from "./icons/KebabIcon";
 import LightningIcon from "./icons/LightningIcon";
 import { LockOffIcon, LockOnIcon } from "./icons/LockIcons";
 import { LightOffIcon, LightOnIcon } from "./icons/LightIcons";
+import {
+  NotificationOffIcon,
+  NotificationOnIcon,
+} from "./icons/NotificationIcons";
 
 const iconMap = {
   check: CheckIcon,
@@ -33,6 +37,8 @@ const iconMap = {
   "lock-on": LockOnIcon,
   "light-off": LightOffIcon,
   "light-on": LightOnIcon,
+  "notification-off": NotificationOffIcon,
+  "notification-on": NotificationOnIcon,
 };
 
 function DispatchIcon({
