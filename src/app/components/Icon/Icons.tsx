@@ -8,6 +8,7 @@ import { DarkOffIcon, DarkOnIcon } from "./icons/DarkIcons";
 import DeleteIcon from "./icons/DeleteIcon";
 import EditIcon from "./icons/EditIcon";
 import { EyeOffIcon, EyeOnIcon } from "./icons/EyeIcons";
+import InfoIcon from "./icons/InfoIcon";
 
 const iconMap = {
   check: CheckIcon,
@@ -21,6 +22,7 @@ const iconMap = {
   edit: EditIcon,
   "eye-off": EyeOffIcon,
   "eye-on": EyeOnIcon,
+  info: InfoIcon,
 };
 
 function DispatchIcon({
