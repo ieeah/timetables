@@ -3,11 +3,14 @@ import { IconProps } from "./types";
 import CheckIcon from "./icons/CheckIcon";
 import CloseIcon from "./icons/CloseIcon";
 import ClockIcon from "./icons/ClockIcon";
+import { CloudOnIcon, CloudOffIcon } from "./icons/CloudIcons";
 
 const iconMap = {
   check: CheckIcon,
   close: CloseIcon,
   clock: ClockIcon,
+  "cloud-off": CloudOffIcon,
+  "cloud-on": CloudOnIcon,
 };
 
 function DispatchIcon({
