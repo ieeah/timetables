@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
+import "../../fonts/fonts.ts";
 import Input from "../app/components/Input/Input";
 import "../app/components/Input/input.scss";
 
@@ -18,28 +19,28 @@ const meta = {
     type: {
       control: "select",
       options: [
-        "button",
-        "checkbox",
-        "color",
-        "date",
-        "datetime-local",
+        // "button",
+        // "checkbox",
+        // "color",
+        // "date",
+        // "datetime-local",
         "email",
-        "file",
-        "hidden",
-        "image",
-        "month",
-        "number",
+        // "file",
+        // "hidden",
+        // "image",
+        // "month",
+        // "number",
         "password",
-        "radio",
-        "range",
-        "reset",
-        "search",
-        "submit",
-        "tel",
+        // "radio",
+        // "range",
+        // "reset",
+        // "search",
+        // "submit",
+        // "tel",
         "text",
-        "time",
-        "url",
-        "week",
+        // "time",
+        // "url",
+        // "week",
       ],
     },
   },
@@ -55,6 +56,14 @@ export const Email: Story = {
   args: {
     type: "email",
     label: "Email",
+    required: true,
+  },
+};
+
+export const Password: Story = {
+  args: {
+    type: "password",
+    label: "Password",
     required: true,
   },
 };
