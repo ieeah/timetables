@@ -1,27 +1,11 @@
 "use client";
 
+import cn from "classnames";
 import React from "react";
-import "./input.scss";
+
 import Password from "./Password/Password";
+import "./input.scss";
 import { InputProps, InputTypes } from "./types";
-
-function Input({ className, ...props }: InputProps) {
-  const inputRef = React.useRef<HTMLInputElement>(null);
-
-  return (
-    <div className={`input-wrapper ${className || ""}`}>
-      <div className="input">
-        <InputLabel id={props.id} required={props.required}>
-          {props.label}
-        </InputLabel>
-        <input
-          ref={inputRef}
-          {...props}
-        />
-      </div>
-    </div>
-  );
-}
 
 function InputLabel({
   children,
@@ -40,14 +24,26 @@ function InputLabel({
   );
 }
 
-export function BasicInput({ className, ...props }: InputProps) {
-  const inputRef = React.useRef<HTMLInputElement>(null);
+export function BasicInput({
+  className,
+  label,
+  id,
+  required,
+  ...props
+}: InputProps) {
 
+  const inputRef = React.useRef<HTMLInputElement>(null);
+  const inputClassName = cn(
+    "input-wrapper",
+    { "input--disabled": props.disabled },
+    className
+  );
+  
   return (
-    <div className={`input-wrapper ${className || ""}`}>
+    <div className={inputClassName}>
       <div className="input">
-        <InputLabel id={props.id} required={props.required}>
-          {props.label}
+        <InputLabel id={id} required={required}>
+          {label}
         </InputLabel>
         <input
           ref={inputRef}
@@ -69,5 +65,5 @@ function DispatchInput({ type, ...props }: InputProps) {
   return <InputComponent type={type} {...props} />;
 }
 
-Input.displayName = "Input";
+BasicInput.displayName = "Input";
 export default DispatchInput;
