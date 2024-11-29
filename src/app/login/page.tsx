@@ -1,9 +1,13 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React from "react";
 
 import Button from "../components/Button/Button";
 import Input from "../components/Input/Input";
+
+import { supabaseAuth } from "../../../supabaseClient";
+
 import "./login.scss";
 
 const arr: Array<"xs" | "sm" | "md" | "lg" | "xl"> = [
@@ -17,11 +21,30 @@ const arr: Array<"xs" | "sm" | "md" | "lg" | "xl"> = [
 export default function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (e.target.name === "email") setEmail(value);
     if (e.target.name === "pwd") setPassword(value);
+  };
+
+  const handleLogin = async () => {
+    const [error, data] = await supabaseAuth.login({ email, password });
+    console.log("Login response:", { error, data });
+  };
+
+  const handleSignUp = async () => {
+    const [error, data] = await supabaseAuth.signUp({ email, password });
+    console.log("Sign up response:", { error, data });
+  };
+
+  const handleSubmit = async (action: string) => {
+    if (action === "login") {
+      handleLogin();
+    } else {
+      handleSignUp();
+    }
   };
 
   return (
@@ -56,7 +79,7 @@ export default function Login() {
             Accedi
           </Button>
           <Button onClick={() => handleSubmit("signup")}>Registrati</Button>
-      </div>
+        </div>
       </form>
     </main>
   );
