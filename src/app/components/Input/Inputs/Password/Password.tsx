@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Icon } from "../../Icon/Icon";
-import { BasicInput } from "../Input";
-import { InputProps } from "../types";
+import { Icon } from "../../../Icon/Icon";
+import { BasicInput } from "../../Input";
+import { InputProps } from "../../types";
 
 export default function Password(props: InputProps) {
   const [showPassword, setShowPassword] = React.useState(false);
