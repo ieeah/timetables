@@ -1,4 +1,4 @@
-import { IconProps, IconColors, IconSizes } from "../types";
+import { IconColors, IconProps, IconSizes } from "../types";
 
 export function NotificationOffIcon({ ...props }: Readonly<IconProps>) {
   return (
