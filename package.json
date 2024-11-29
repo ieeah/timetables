@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.44.4",
-    "react-dom": "^18",
+    "classnames": "^2.5.1",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18"
@@ -22,18 +22,22 @@
     "@storybook/addon-essentials": "^8.2.7",
     "@storybook/addon-interactions": "^8.2.7",
     "@storybook/addon-links": "^8.2.7",
-    "@storybook/addon-onboarding": "^8.2.7",
     "@storybook/blocks": "^8.2.7",
     "@storybook/nextjs": "^8.2.7",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^8.2.7",
     "@storybook/test": "^8.2.7",
     "@types/node": "^20.14.12",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "css-loader": "^7.1.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "eslint-plugin-storybook": "^0.8.0",
+    "sass": "^1.81.0",
+    "sass-loader": "^16.0.3",
     "storybook": "^8.2.7",
+    "style-loader": "^4.0.0",
     "typescript": "^5"
   }
 }
