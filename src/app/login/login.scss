@@ -1,0 +1,45 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .login-box {
+    width: 400px;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0 black;
+    border-radius: 20px;
+    padding: 1.5rem;
+
+    h2 {
+      margin-bottom: 3rem;
+    }
+
+    .input-wrapper {
+      width: 100%;
+    }
+
+    .login-divider {
+      width: 100%;
+      border-bottom: 2px solid;
+      margin-block: 1.5rem;
+      position: relative;
+
+      &::after,
+      &::before {
+        position: absolute;
+        content: "";
+        width: 5px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: black;
+        translate: 0 -50%;
+        top: 1px;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}

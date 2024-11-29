@@ -1,0 +1,86 @@
+.input-wrapper {
+  width: 100%;
+
+  .input {
+    position: relative;
+    width: 100%;
+
+    &:has(input[disabled]) {
+      label {
+        color: var(--info-color);
+      }
+    }
+
+    label {
+      position: absolute;
+      top: -13px;
+      left: 10px;
+      padding-inline: 5px;
+      background-color: var(--bg-color);
+      z-index: 2;
+
+      &:not(:has(span.required-indicator)) {
+        top: -11px;
+      }
+
+      .required-indicator {
+        color: var(--danger-color);
+        font-size: 1.2rem;
+        position: relative;
+        top: 0.2rem;
+        font-weight: 600;
+        padding-inline-start: 0.5rem;
+      }
+    }
+
+    input {
+      width: 100%;
+      background-color: var(--bg-color);
+
+      &[type="password"] {
+        letter-spacing: 0.01px;
+        font-size: 1.25rem;
+        padding-right: 36px; // Keep space for eye button
+      }
+
+      &:not(:is([type="checkbox"], [type="radio"], [type="range"])) {
+        border: 2px solid var(--text-color);
+        padding: 8px;
+        height: 45px;
+        border-radius: 8px;
+      }
+
+      &:user-invalid {
+        border-color: var(--danger-color);
+        box-shadow: 3px 3px 0 1px var(--danger-color);
+      }
+
+      &:user-valid {
+        border-color: var(--success-color);
+        box-shadow: 3px 3px 0 1px var(--success-color);
+      }
+
+      &[disabled] {
+        border-color: var(--info-color);
+        color: var(--info-color);
+      }
+
+      &[disabled]:placeholder-shown {
+        color: var(--info-color);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:is(input:focus, input:focus-visible) {
+        border-color: var(--text-color);
+        box-shadow: 3px 3px 0 1px var(--text-color);
+      }
+
+      &:is([type="checkbox"], [type="radio"], [type="range"]) {
+        box-shadow: none;
+      }
+    }
+  }
+}
