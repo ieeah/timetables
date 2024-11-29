@@ -1,10 +1,30 @@
-.main {
+/* .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
-  min-height: 100vh;
+  overflow: hidden;
+} */
+
+.heading {
+  font-size: 120px;
+}
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .description {
@@ -90,7 +110,7 @@
 }
 
 .center::after {
-  background: var(--primary-glow);
+  /* background: var(--primary-glow); */
   width: 240px;
   height: 180px;
   z-index: -1;
@@ -108,6 +128,7 @@
 .logo {
   position: relative;
 }
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
