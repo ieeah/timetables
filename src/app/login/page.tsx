@@ -1,65 +1,10 @@
 "use client";
 
 import React from "react";
-// import { supabase } from "../../../supabaseClient";
-// import { useRouter } from "next/navigation";
-// // import styles from "./login.module.css";
-// // import styles from "../src/app/style/global.module.css";
-import { Icon } from "../components/Icon/Icon";
+
+import Button from "../components/Button/Button";
 import Input from "../components/Input/Input";
 import "./login.scss";
-
-// export default function Page() {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const router = useRouter();
-
-//   const handleLogin = async () => {
-//     try {
-//       const { error } = await supabase.auth.signInWithPassword({
-//         email,
-//         password,
-//       });
-//       if (error) {
-//         alert(error.message);
-//       } else {
-//         router.push("/");
-//       }
-//     } catch (error) {
-//       alert((error as Error).message);
-//     }
-//   };
-
-//   const handleSignUp = async () => {
-//     try {
-//       const { error } = await supabase.auth.signUp({
-//         email,
-//         password,
-//       });
-//       if (error) {
-//         alert(error.message);
-//       } else {
-//         router.push("/");
-//       }
-//     } catch (error) {
-//       alert((error as Error).message);
-//     }
-//   };
-
-//   const handleSubmit = async (action: string) => {
-//     if (action === "login") {
-//       handleLogin();
-//     } else {
-//       handleSignUp();
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h1>Timetables</h1>
-//     </div>
-//   );
-// }
 
 const arr: Array<"xs" | "sm" | "md" | "lg" | "xl"> = [
   "xs",
@@ -81,7 +26,7 @@ export default function Login() {
 
   return (
     <main className="main">
-      <div className="login-box">
+      <form className="login-box" onSubmit={(e) => e.preventDefault()}>
         <h2>Login</h2>
         <Input
           label="Email"
@@ -101,7 +46,18 @@ export default function Login() {
           required
         />
         <div className="login-divider"></div>
+        <div className="actions-wrapper">
+          <Button
+            className="mb-1"
+            variant="primary"
+            onClick={() => handleSubmit("login")}
+            type="submit"
+          >
+            Accedi
+          </Button>
+          <Button onClick={() => handleSubmit("signup")}>Registrati</Button>
       </div>
+      </form>
     </main>
   );
 }

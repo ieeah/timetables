@@ -46,6 +46,8 @@
   --info-color: #999999;
   --text-color: #000000;
   --bg-color: #ffffff;
+  --primary-btn-bg: linear-gradient(78.089deg, #E77D4C 0%, #EB942D 24%, #E2A632 43%, #ECBF2E 100%)
+
 }
 
 /* @media (prefers-color-scheme: dark) {
