@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import "./components/Button/button.scss";
+import LoginBox from "./components/LoginBox/LoginBox";
 import PageTitle from "./components/PageTitle/PageTitle";
 import "./style/home.css";
 
@@ -10,9 +9,7 @@ export default function Home() {
       <div className="gradient-wrapper">
         <PageTitle subtitle={"Il tool per capire a che ora puoi uscire venerdì dall' ufficio"} />
       </div>
-      <div className="login-btn-wrapper">
-        <Link href="/login" className="btn primary login-btn">Accedi</Link>
-      </div>
+      <LoginBox />
       <div className="gradient-wrapper"></div>
     </main>
   );
