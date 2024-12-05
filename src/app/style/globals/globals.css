@@ -156,12 +156,20 @@ textarea:not([rows]) {
 
 .heading {
   font-size: var(--h1, 120px);
-  font-weight: bold;
+  font-weight: medium;
   text-decoration: underline;
   text-decoration-color: rgb(66, 152, 228);
   text-decoration-thickness: 3px;
   text-wrap: balance;
   text-underline-offset: -3px;
+  text-align: center;
+}
+
+.subheading {
+  font-size: var(--fs-md, 32px);
+  font-weight: medium;
+  text-wrap: balance;
+  text-align: center;
 }
 
 /* For browsers that support clamp  */
