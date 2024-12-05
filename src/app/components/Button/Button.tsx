@@ -8,14 +8,17 @@ export default function Button({
   children,
   className,
   variant = "secondary",
+  block = false,
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
   variant?: "primary" | "secondary";
+  block?: boolean;
 }) {
 
-  const buttonClassname = cn("button", className, {
+  const buttonClassname = cn("btn", className, {
     [`${variant}`]: variant,
+    block,
   });
 
   return (

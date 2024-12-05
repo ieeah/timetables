@@ -1,13 +1,15 @@
-import React from "react";
+"use server";
 
+import React from "react";
+import { Lora, Roboto } from "../../../../fonts/fonts";
 import "./footer.scss";
 
-export default function Footer() {
+export default async function Footer() {
   return (
     <footer
-      className="footer"
+      className={`footer ${Lora.className}`}
     >
-      developed by <a href="https://github.com/ieeah" target="_blank">Ieeah</a> @ U1P1 ®
+      Developed by <small><a href="https://github.com/ieeah" target="_blank" className={Roboto.className}>Ieeah</a></small> @U1P1 ®
     </footer>
   )
 };

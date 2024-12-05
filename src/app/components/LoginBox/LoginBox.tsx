@@ -3,22 +3,13 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-import Button from "../components/Button/Button";
-import Input from "../components/Input/Input";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
 
-import { supabaseAuth } from "../../../supabaseClient";
-
+import { supabaseAuth } from "../../../../supabaseClient";
 import "./login.scss";
 
-const arr: Array<"xs" | "sm" | "md" | "lg" | "xl"> = [
-  "xs",
-  "sm",
-  "md",
-  "lg",
-  "xl",
-];
-
-export default function Login() {
+export default function LoginBox() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const router = useRouter();
@@ -39,18 +30,25 @@ export default function Login() {
     console.log("Sign up response:", { error, data });
   };
 
+  const handleLogout = async () => {
+    const [error, data] = await supabaseAuth.signOut();
+    console.log("Logout response:", { error, data });
+  };
+
   const handleSubmit = async (action: string) => {
     if (action === "login") {
       handleLogin();
-    } else {
+    } else if (action === "signup") {
       handleSignUp();
+    } else {
+      handleLogout();
     }
   };
 
   return (
-    <main className="main">
+    <div className="login-wrapper">
       <form className="login-box" onSubmit={(e) => e.preventDefault()}>
-        <h2>Login</h2>
+        <h3 className="mb-15">Login</h3>
         <Input
           label="Email"
           type="email"
@@ -59,6 +57,8 @@ export default function Login() {
           name="email"
           className="mb-2"
           required
+          placeholder=""
+          aria-placeholder="Email"
         />
         <Input
           label="Password"
@@ -67,20 +67,36 @@ export default function Login() {
           onChange={handleChange}
           name="pwd"
           required
+          placeholder=""
+          aria-placeholder="Password"
+          minLength={8}
         />
         <div className="login-divider"></div>
         <div className="actions-wrapper">
           <Button
-            className="mb-1"
             variant="primary"
             onClick={() => handleSubmit("login")}
             type="submit"
+            block
           >
             Accedi
           </Button>
-          <Button onClick={() => handleSubmit("signup")}>Registrati</Button>
+          <Button
+            onClick={() => handleSubmit("signup")}
+            block
+            type="submit"
+          >
+            Registrati
+          </Button>
+          <Button
+            onClick={() => handleSubmit("logout")}
+            block
+            type="submit"
+          >
+            Esci
+          </Button>
         </div>
       </form>
-    </main>
+    </div>
   );
 }

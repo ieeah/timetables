@@ -1,0 +1,24 @@
+.home {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  & .gradient-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: min(10vh, 7rem);
+    background: var(--primary-btn-bg);
+    width: 100%;
+  }
+  & .login-btn-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .login-btn {
+      font-size: var(--fs-md);
+    }
+  }
+}

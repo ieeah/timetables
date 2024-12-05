@@ -1,22 +1,29 @@
-.main {
+.login-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  flex-grow: 1;
+  width: 100%;
 
   .login-box {
-    width: 400px;
+    min-width: 400px;
     border: 2px solid black;
     box-shadow: 4px 4px 0 black;
     border-radius: 20px;
     padding: 1.5rem;
 
-    h2 {
-      margin-bottom: 3rem;
-    }
-
     .input-wrapper {
       width: 100%;
+    }
+
+    .error-message {
+      color: var(--danger-color);
+      font-size: 0.875rem;
+      padding: 0.5rem;
+      border: 1px solid var(--danger-color);
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      background-color: var(--danger-bg-color);
     }
 
     .login-divider {
@@ -40,6 +47,12 @@
       &::after {
         right: 0;
       }
+    }
+
+    .actions-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
   }
 }

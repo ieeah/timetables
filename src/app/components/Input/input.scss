@@ -50,12 +50,12 @@
         border-radius: 8px;
       }
 
-      &:user-invalid {
+      &:not(:placeholder-shown):user-invalid {
         border-color: var(--danger-color);
         box-shadow: 3px 3px 0 1px var(--danger-color);
       }
 
-      &:user-valid {
+      &:not(:placeholder-shown):user-valid {
         border-color: var(--success-color);
         box-shadow: 3px 3px 0 1px var(--success-color);
       }
