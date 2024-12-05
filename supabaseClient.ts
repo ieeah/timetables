@@ -7,58 +7,52 @@ export const supabase: SupabaseClient = createClient(
   supabaseUrl,
   supabaseAnonKey,
 );
-// import { useRouter } from "next/navigation";
-// import { supabase } from "./supabaseClient";
-// import { Session, User } from "@supabase/supabase-js";
 
-//   const handleLogin = async () => {
-//     try {
-//       const { error } = await supabase.auth.signInWithPassword({
-//         email,
-//         password,
-//       });
-//       if (error) {s
-//         console.log(error.message);
-//       } else {
-//         router.push("/");
-//       }
-//     } catch (error) {
-//       console.error((error as Error).message);
-//     }
-//   };
+export const supabaseAuth = {
+  login: async ({ email, password }: { email: string; password: string }) => {
+    try {
+      const { error, data } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      return error ? [error, null] : [null, data];
+    } catch (error) {
+      return [error as Error, null];
+    }
+  },
 
-//   const handleSignUp = async () => {
-//     try {
-//       const { error } = await supabase.auth.signUp({
-//         email,
-//         password,
-//       });
-//       if (error) {
-//         console.error(error.message);
-//       } else {
-//         router.push("/");
-//       }
-//     } catch (error) {
-//       console.error((error as Error).message);
-//     }
-//   };
+  signUp: async ({ email, password }: { email: string; password: string }) => {
+    try {
+      const { error, data } = await supabase.auth.signUp({
+        email,
+        password,
+      });
+      return error ? [error, null] : [null, data];
+    } catch (error) {
+      return [error as Error, null];
+    }
+  },
 
-//   const getSession = async () => {
-//     const session: Session | null = await supabase.auth.getSession();
-//     // const authUser: User | null = await supabase.auth.updateUser({
-//     //   data: {
-//     //     full_name: "test user",
-//     //   },
-//     // });
-//     if (session?.data?.session?.user) {
-//       setUser(session.data?.session?.user);
-//     } else {
-//       router.push("/login");
-//     }
-//   };
+  getSession: async () => {
+    try {
+      const { data, error } = await supabase.auth.getSession();
+      return error ? [error, null] : [null, data];
+    } catch (error) {
+      return [error as Error, null];
+    }
+  },
 
-// const signOut = async () => {
-//   supabase.auth.signOut().then(() => router.push("/login"));
-// }
+  signOut: async () => {
+    try {
+      const { error } = await supabase.auth.signOut();
+      return error ? [error, null] : [null, {}];
+    } catch (error) {
+      return [error as Error, null];
+    }
+  },
 
-// <div>Welcome, {user.user_metadata.full_name}</div>
+  onAuthStateChange: (callback: (event: string, session: any) => void) => {
+    const { data } = supabase.auth.onAuthStateChange(callback);
+    return data;
+  },
+};
