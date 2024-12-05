@@ -3,6 +3,7 @@ import { Roboto } from "../../fonts/fonts";
 import Footer from "./components/Footer/Footer";
 import styles from "./home.module.css";
 import "./style/globals/globals.css";
+import "./style/globals/reset.css";
 import "./style/globals/utilities.css";
 
 export const metadata: Metadata = {

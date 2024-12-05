@@ -84,7 +84,6 @@
 } */
 
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -109,67 +108,8 @@ a {
   }
 } */
 
-/* This reset is based on Andy Bell article
-
-https: //andy-bell.co.uk/a-more-modern-css-reset/ 
-
-and Kevin Powell video
-
-https: //www.youtube.com/watch?v=345V2MU3E_w
-
-*/
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-wrap: pretty;
-}
-
-/* Prevent font size inflation */
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  text-size-adjust: none;
-}
-
-/* Remove default margin in favour of better control in authored CSS */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin-block-end: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
 html:focus-within {
   scroll-behavior: smooth;
-}
-
-/* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
-button,
-input,
-label {
-  line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
@@ -178,21 +118,6 @@ h2,
 h3,
 h4 {
   text-wrap: balance;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  font-style: italic;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -210,20 +135,46 @@ textarea:not([rows]) {
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
-  scroll-margin-block: 0.5rem;
+  scroll-margin-block: .5rem;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
+/* Accessibility */
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within):not(:focus-visible),
+.skip-link:not(:focus):not(:focus-within):not(:focus-visible) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0% 0%);
+  white-space: nowrap;
+  border: 0;
+}
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+.heading {
+  font-size: var(--h1, 120px);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: rgb(66, 152, 228);
+  text-decoration-thickness: 3px;
+  text-wrap: balance;
+  text-underline-offset: -3px;
+}
+
+/* For browsers that support clamp  */
+@supports (font-size: clamp(1rem, 1vi, 1rem)) {
+  :root {
+    --fs-sm: clamp(0.8rem, 0.1vi + 0.78rem, 0.89rem);
+    --fs-base: clamp(1rem, 0.2vi + 0.95rem, 1.19rem);
+    --fs-md: clamp(1.25rem, 0.35vi + 1.16rem, 1.58rem);
+    --fs-lg: clamp(1.56rem, 0.58vi + 1.42rem, 2.11rem);
+    --fs-xl: clamp(1.95rem, 0.9vi + 1.73rem, 2.81rem);
+    --fs-xxl: clamp(2.44rem, 1.38vi + 2.1rem, 3.75rem);
+    --fs-xxxl: clamp(3.05rem, 2.05vi + 2.54rem, 5rem);
+    --fs-xxxxl: clamp(3.25rem, 2.25vi + 3.54rem, 7.5rem);
+    --h1: clamp(3.5rem, 2.38vi + 3.1rem, 7.5rem);
   }
 }
