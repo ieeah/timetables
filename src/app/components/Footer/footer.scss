@@ -4,5 +4,10 @@ footer.footer {
   width: 100%;
   text-align: center;
   padding-block: 1rem;
-  border-top: 1px solid #eaeaea;
+  background: var(--primary-btn-bg);
+
+  a {
+    text-decoration: underline;
+  }
+
 }
