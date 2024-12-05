@@ -2,10 +2,10 @@
 
 import { Roboto } from "../../fonts/fonts";
 import Footer from "./components/Footer/Footer";
-import styles from "./home.module.css";
 import "./style/globals/globals.css";
 import "./style/globals/reset.css";
 import "./style/globals/utilities.css";
+import "./style/layout.css";
 
 export default async function RootLayout({
   children,
@@ -21,7 +21,7 @@ export default async function RootLayout({
           content="Il tool per capire a che ora puoi uscire venerdì dall' ufficio"
         />
       </head>
-      <body className={`${Roboto.className} ${styles.layout}`}>
+      <body className={`${Roboto.className} layout`}>
         {children}
         <Footer />
       </body>
