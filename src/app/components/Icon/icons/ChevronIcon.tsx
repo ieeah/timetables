@@ -6,7 +6,7 @@ import {
   ChevronSides,
 } from "../types";
 
-export default function ChevronIcon({ ...props }: Readonly<IconProps>) {
+export default function ChevronIcon({ size = "md", color = "default", thickness = "bold", ...props }: Readonly<IconProps>) {
   const side: ChevronSides = props.icon.split("-")[1] as ChevronSides;
   const rotation = {
     right: "unset",
@@ -16,8 +16,8 @@ export default function ChevronIcon({ ...props }: Readonly<IconProps>) {
   };
   const base = (
     <svg
-      width={IconSizes[props.size ?? "md"]}
-      height={IconSizes[props.size ?? "md"]}
+      width={IconSizes[size]}
+      height={IconSizes[size]}
       viewBox="0 0 11 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +25,8 @@ export default function ChevronIcon({ ...props }: Readonly<IconProps>) {
     >
       <path
         d="M2.33334 15.6667L9 9.00004L2.33334 2.33337"
-        stroke={IconColors[props.color ?? "default"]}
-        strokeWidth={IconThickness[props.thickness]}
+        stroke={IconColors[color]}
+        strokeWidth={IconThickness[thickness]}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
