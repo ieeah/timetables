@@ -49,6 +49,7 @@ export default function Login() {
 
   return (
     <main className="main">
+      <div className="white-band" />
       <form className="login-box" onSubmit={(e) => e.preventDefault()}>
         <h2>Login</h2>
         <Input

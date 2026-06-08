@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Roboto } from "../../fonts/fonts";
-import Footer from "./components/Footer/Footer";
-import styles from "./home.module.css";
 import "./style/globals/globals.css";
 import "./style/globals/utilities.css";
 
@@ -17,9 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body className={`${Roboto.className} ${styles.layout}`}>
-        <div className={styles.pageWrapper}>{children}</div>
-        <Footer />
+      <body className={Roboto.className}>
+        {children}
       </body>
     </html>
   );

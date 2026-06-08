@@ -2,7 +2,7 @@
 import cn from "classnames";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-import "./button.scss";
+import "./Button.scss";
 
 export default function Button({
   children,

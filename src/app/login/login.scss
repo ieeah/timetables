@@ -1,18 +1,44 @@
+$gradient: linear-gradient(78.089deg, #E77D4C 0%, #EB942D 24%, #E2A632 43%, #ECBF2E 100%);
+$band-height: 420px;
+$overlap: 120px; // quanto il box sporge sopra/sotto dalla banda
+
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   min-height: 100vh;
+  background: $gradient;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .white-band {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: $band-height;
+    background: #ffffff;
+    // Allineata al centro del box: il box è centrato con flexbox,
+    // quindi il centro del box coincide con il centro di .main
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   .login-box {
+    position: relative;
+    z-index: 1;
     width: 400px;
-    border: 2px solid black;
-    box-shadow: 4px 4px 0 black;
-    border-radius: 20px;
-    padding: 1.5rem;
+    background: #ffffff;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0 0 #000000;
+    border-radius: 8px;
+    padding: 38px 48px 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 
     h2 {
-      margin-bottom: 3rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: 1.5rem;
+      font-weight: 500;
     }
 
     .input-wrapper {
@@ -21,8 +47,9 @@
 
     .login-divider {
       width: 100%;
-      border-bottom: 2px solid;
-      margin-block: 1.5rem;
+      border: none;
+      border-bottom: 5px solid #000000;
+      margin: 0;
       position: relative;
 
       &::after,
@@ -40,6 +67,12 @@
       &::after {
         right: 0;
       }
+    }
+
+    .actions-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
   }
 }
